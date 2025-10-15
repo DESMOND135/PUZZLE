@@ -1,3 +1,4 @@
+
 # SMT Solver Testing Framework
 
 This repository contains two complementary tools for testing and fuzzing SMT solvers:
@@ -31,3 +32,20 @@ g++ -std=c++17 -o typefuzz tyfusi-prototype.cpp
 
 # Compile Bug Hunter
 g++ -std=c++11 -o bug-hunter smt-bug-hunter.cpp
+```
+
+## 📁 Files
+
+- `tyfusi-prototype.cpp` - TypeFuzz implementation
+- `smt-bug-hunter.cpp` - Bug hunting framework
+- `tyfusi-output.txt` / `bug-hunter-output.txt` - Execution results
+
+## 🎯 Purpose
+
+These tools demonstrate systematic approaches to:
+- Generate complex SMT constraints for solver testing
+- Identify edge cases and potential vulnerabilities
+- Improve SMT solver reliability through comprehensive testing
+
+*Note: The TypeFuzz prototype uses a mock cvc5 API that mirrors the real interface for demonstration purposes.*
+```
