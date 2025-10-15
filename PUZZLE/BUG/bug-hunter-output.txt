@@ -1,0 +1,150 @@
+[?2004l
+🎯 QUESTION 2: SMT SOLVER BUG HUNTER
+=====================================
+
+🚀 STARTING COMPREHENSIVE SMT SOLVER BUG HUNT
+==============================================
+
+🔍 Testing Integer Overflow Scenarios
+----------------------------------------
+  Test 1: (+ 2147483647 1)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Integer overflow handling
+
+  Test 2: (* 2147483647 2)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Integer overflow handling
+
+  Test 3: (- (- 2147483648) 1)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Integer overflow handling
+
+  Test 4: (+ (* 1000000 1000000) 1)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Integer overflow handling
+
+  Test 5: (div 1 0)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Integer overflow handling
+
+🔍 Testing Division Edge Cases
+--------------------------------
+  Test 1: (/ 1 0)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Division by zero semantics
+
+  Test 2: (/ 2147483647 0)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Division by zero semantics
+
+  Test 3: (/ (/ 100 0) 5)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Division by zero semantics
+
+  Test 4: (+ 5 (/ 10 (- 5 5)))
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Division by zero semantics
+
+🔍 Testing Deeply Nested Expressions
+--------------------------------------
+  Test 1: (and (or (and (or true false) (not (> x y))) true)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Stack overflow or performance issues
+
+  Test 2: (= (+ (- (* a b) (/ c d)) (* e (- f g))) (- (* h (+ i j)) (/ k (+ l m))))
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Stack overflow or performance issues
+
+  Test 3: (and (> (+ (* x y) z) 0) (or (< (- a b) c) (= (* d e) (+ f g))))
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Stack overflow or performance issues
+
+🔍 Testing Type System Corner Cases
+-------------------------------------
+  Test 1: (= true 1)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Type system validation
+
+  Test 2: (+ true false)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Type system validation
+
+  Test 3: (> true false)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Type system validation
+
+  Test 4: (and 1 0)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Type system validation
+
+  Test 5: (+ x true)
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Type system validation
+
+🔍 Testing Memory Stress Cases
+--------------------------------
+  Test 1: (and (> x1 0) (< x2 0) (= x3 1) (> x4 2) (< x5 -1) (= x6 0))
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Memory leaks or excessive resource usage
+
+  Test 2: (and (= a1 b1) (= a2 b2) (= a3 b3) (= a4 b4) (= a5 b5) (= a6 b6))
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Memory leaks or excessive resource usage
+
+  Test 3: (= (+ (- (* a b) (/ c d)) (* e (- f g))) (- (* h (+ i j)) (/ k (+ l m))))
+    Status: [NEEDS REAL SMT SOLVER TESTING]
+    Potential Bug: Memory leaks or excessive resource usage
+
+✅ BUG HUNTING ANALYSIS COMPLETE
+================================
+
+SUMMARY:
+• Identified 5 categories of potential bugs
+• Generated 20 test cases total
+• Ready for testing with real SMT solvers
+
+NEXT STEPS:
+1. Install real SMT solvers (cvc5, Z3, Yices)
+2. Run these test cases with each solver
+3. Look for crashes, wrong answers, or performance issues
+4. Use the template below to report found bugs
+
+📋 BUG REPORT TEMPLATE FOR GITHUB ISSUES
+=========================================
+
+## Bug Report Summary
+
+**Solver:** [cvc5/Z3/Yices] [Version]
+**Type:** Crash/Incorrect Result/Performance Issue
+**Priority:** High/Medium/Low
+
+## Description
+[Clear description of the unexpected behavior]
+
+## Steps to Reproduce
+1. Use the following SMT2 script:
+```smt2
+(set-logic QF_LIA)
+(declare-fun x () Int)
+(declare-fun y () Int)
+(assert (= (+ 2147483647 1) x))
+(check-sat)
+```
+
+## Expected Behavior
+[SAT/UNSAT or proper error message]
+
+## Actual Behavior
+[Crash/wrong answer/performance issue observed]
+
+## Environment
+- Solver Version: [e.g., cvc5 1.0.8]
+- OS: [e.g., Ubuntu 22.04]
+- Compiler: [e.g., GCC 11.4]
+
+## Additional Context
+[Tested with other solvers for comparison]
+
+==============================================
+QUESTION 2 COMPLETE - READY FOR REAL SMT SOLVER TESTING
+[?2004h
